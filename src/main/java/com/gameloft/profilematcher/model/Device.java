@@ -1,11 +1,8 @@
-package com.gameloft.model;
+package com.gameloft.profilematcher.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "devices")
@@ -13,6 +10,7 @@ import javax.persistence.Table;
 public class Device {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String model;
@@ -21,7 +19,8 @@ public class Device {
 
     private String firmware;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "profile_id")
     private Profile profile;
 
 }

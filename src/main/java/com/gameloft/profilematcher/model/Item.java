@@ -1,11 +1,8 @@
-package com.gameloft.model;
+package com.gameloft.profilematcher.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "items")
@@ -13,13 +10,15 @@ import javax.persistence.Table;
 public class Item {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
 
     private Long quantity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "profile_id")
     private Profile profile;
 
 }

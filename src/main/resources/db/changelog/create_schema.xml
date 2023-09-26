@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="1" author="drimovecz">
+        <createTable tableName="clans">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="player_profiles">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="player_id" type="varchar(40)"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+            <column name="last_session" type="datetime"/>
+            <column name="total_spent" type="double"/>
+            <column name="total_refund" type="double"/>
+            <column name="total_transactions" type="int"/>
+            <column name="last_purchase" type="datetime"/>
+            <column name="level" type="int"/>
+            <column name="xp" type="bigint"/>
+            <column name="total_playtime_seconds" type="bigint"/>
+            <column name="country" type="varchar(10)"/>
+            <column name="language" type="varchar(10)"/>
+            <column name="birth_date" type="datetime"/>
+            <column name="gender" type="varchar(10)"/>
+            <column name="clan_id" type="bigint">
+                <constraints nullable="true" foreignKeyName="fk_player_profile_clan_id" references="clans(id)"/>
+            </column>
+            <column name="custom_field" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="items">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="quantity" type="bigint"/>
+            <column name="profile_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_item_player_profile_id" references="player_profiles(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="devices">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="model" type="varchar(255)"/>
+            <column name="carrier" type="varchar(255)"/>
+            <column name="firmware" type="varchar(255)"/>
+            <column name="profile_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_device_player_profile_id" references="player_profiles(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="games">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="release_date" type="datetime"/>
+        </createTable>
+
+        <createTable tableName="campaigns">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="game_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_campaign_game_id" references="games(id)"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="priority" type="double"/>
+            <column name="start_date" type="datetime"/>
+            <column name="end_date" type="datetime"/>
+            <column name="enabled" type="boolean"/>
+            <column name="last_updated" type="datetime"/>
+            <column name="matchers" type="varchar(2000)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

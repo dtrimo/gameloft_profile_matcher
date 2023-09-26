@@ -1,4 +1,4 @@
-package com.gameloft.matchers;
+package com.gameloft.profilematcher.matchers;
 
 public interface Matcher<T> {
 

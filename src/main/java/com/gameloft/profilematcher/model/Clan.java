@@ -1,4 +1,4 @@
-package com.gameloft.model;
+package com.gameloft.profilematcher.model;
 
 import lombok.Data;
 
@@ -11,10 +11,11 @@ import java.util.List;
 public class Clan {
 
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clan")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "clan", orphanRemoval = false)
     private List<Profile> members;
 
 }
