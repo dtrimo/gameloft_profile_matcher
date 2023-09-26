@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="2" author="drimovecz">
+        <insert tableName="clans">
+            <column name="id" value="123456"/>
+            <column name="name" value="Hello world clan"/>
+        </insert>
+
+        <insert tableName="player_profiles">
+            <column name="player_id" value="97983be2-98b7-11e7-90cf-082e5f28d836"/>
+            <column name="created" valueDate="2021-01-10 13:37:17"/>
+            <column name="modified" valueDate="2021-01-23 13:37:17"/>
+            <column name="last_session" valueDate="2021-01-23 13:37:17"/>
+            <column name="total_spent" value="400"/>
+            <column name="total_refund" value="0"/>
+            <column name="total_transactions" value="5"/>
+            <column name="last_purchase" valueDate="2021-01-22 13:37:17"/>
+            <column name="level" value="3"/>
+            <column name="xp" value="1000"/>
+            <column name="total_playtime_seconds" value="144"/>
+            <column name="country" value="CA"/>
+            <column name="language" value="fr"/>
+            <column name="birth_date" valueDate="2000-01-10 13:37:17"/>
+            <column name="gender" value="male"/>
+            <column name="clan_id" value="123456"/>
+            <column name="custom_field" value="mycustom"/>
+        </insert>
+
+        <insert tableName="items">
+            <column name="name" value="cash"/>
+            <column name="quantity" value="123"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+        <insert tableName="items">
+            <column name="name" value="coins"/>
+            <column name="quantity" value="123"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+        <insert tableName="items">
+            <column name="name" value="item_1"/>
+            <column name="quantity" value="1"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+        <insert tableName="items">
+            <column name="name" value="item_34"/>
+            <column name="quantity" value="3"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+        <insert tableName="items">
+            <column name="name" value="item_55"/>
+            <column name="quantity" value="2"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+        <insert tableName="devices">
+            <column name="model" value="apple iphone 11"/>
+            <column name="carrier" value="vodafone"/>
+            <column name="firmware" value="123"/>
+            <column name="profile_id" valueComputed="(select id from player_profiles where player_id='97983be2-98b7-11e7-90cf-082e5f28d836')"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
