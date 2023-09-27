@@ -1,0 +1,22 @@
+{
+  "level": {
+    "min": 1,
+    "max": 3
+  },
+  "items|any_match": {
+    "quantity": {
+      "min": 100
+    }
+  },
+  "items|none_match": {
+    "name": "item_4",
+    "quantity": {
+      "min": 1
+    }
+  },
+  "devices|any_match": {
+    "carrier": {
+      "regex": ".*daf.*"
+    }
+  }
+}

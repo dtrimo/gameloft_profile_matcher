@@ -1,0 +1,21 @@
+{
+  "level": {
+    "min": 1,
+    "max": 7
+  },
+  "xp": 1000,
+  "country": "CA",
+  "items|any_match": {
+    "name": "item_1",
+    "quantity": {
+      "min": 1
+    }
+  },
+  "items|none_match": {
+    "name": "item_4",
+    "quantity": {
+      "min": 1
+    }
+  }
+}
+

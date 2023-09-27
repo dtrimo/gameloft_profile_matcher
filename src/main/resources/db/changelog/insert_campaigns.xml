@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="3" author="drimovecz">
+        <insert tableName="games">
+            <column name="name" value="mygame"/>
+            <column name="release_date" valueDate="2020-02-10 19:37:17"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign2"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign2_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign3"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign3_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign4"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign4_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign5"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign5_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign6"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign6_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign7"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign7_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign8"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign8_matchers.json"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

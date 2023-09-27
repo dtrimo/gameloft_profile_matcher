@@ -3,6 +3,7 @@ package com.gameloft.profilematcher.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -69,6 +70,10 @@ public class Profile {
 
     @Column(name = "custom_field")
     private String customField;
+
+    //This field is added here for convenience and is not persisted
+    @Transient
+    private List<String> activeCampaigns = new ArrayList<>();
 
     @PrePersist
     public void setCreatedTimestamp() {
