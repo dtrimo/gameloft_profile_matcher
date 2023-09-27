@@ -1,21 +1,23 @@
 spring:
-  jpa.hibernate.ddl-auto: none
+
 #  datasource:
 #    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/gameloft_profile_matcher
 #    username: ${DB_USERNAME:root}
 #    password: ${DB_PASSWORD:admin}
 #    driver-class-name: com.mysql.cj.jdbc.Driver
-
-
   datasource:
     url: jdbc:h2:mem:mydb
     username: sa
     password: password
     driverClassName: org.h2.Driver
+
+
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: none
+    open-in-view: false
+    show-sql: true
 
-  jpa.show-sql: true
   liquibase:
     change-log: classpath:/db/changelog/db.changelog_master.xml
 

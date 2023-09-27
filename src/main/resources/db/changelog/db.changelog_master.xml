@@ -11,6 +11,6 @@
 
         <include file="classpath:/db/changelog/create_schema.xml"/>
         <include file="classpath:/db/changelog/insert_player_profile.xml"/>
-        <include file="classpath:/db/changelog/insert_campaign.xml"/>
+        <include file="classpath:/db/changelog/insert_campaigns.xml"/>
     
 </databaseChangeLog>

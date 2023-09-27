@@ -1,0 +1,12 @@
+[
+  {
+    "level": {
+      "min": 4
+    }
+  },
+  {
+    "devices|any_match": {
+      "firmware": "123"
+    }
+  }
+]

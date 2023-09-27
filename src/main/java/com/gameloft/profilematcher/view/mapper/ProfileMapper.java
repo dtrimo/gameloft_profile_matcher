@@ -6,7 +6,7 @@ import com.gameloft.profilematcher.view.model.ProfileView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Optional;
@@ -21,7 +21,6 @@ public class ProfileMapper {
     @Autowired
     private ClanMapper clanMapper;
 
-    @Transactional
     public ProfileView map(Profile profile) {
         if (profile == null) {
             return null;
@@ -54,7 +53,7 @@ public class ProfileMapper {
         view.setTotalTransactions(profile.getTotalTransactions());
         view.setLastPurchase(profile.getLastPurchase());
         view.setTotalPlaytimeSeconds(profile.getTotalPlaytimeSeconds());
-
+        view.setActiveCampaigns(new ArrayList<>(profile.getActiveCampaigns()));
         return view;
     }
 
