@@ -14,6 +14,8 @@ public class Campaign {
     @GeneratedValue
     private Long id;
 
+    private String name;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "game_id")
     private Game game;
