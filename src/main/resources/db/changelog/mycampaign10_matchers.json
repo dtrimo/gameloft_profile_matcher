@@ -1,0 +1,15 @@
+{
+  "items|all_match": {
+    "quantity": [
+      {
+        "min": 100
+      },
+      {
+        "max": 90
+      }
+    ]
+  }
+}
+
+
+

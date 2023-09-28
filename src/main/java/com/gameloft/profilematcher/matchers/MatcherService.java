@@ -105,7 +105,7 @@ public class MatcherService {
             case BOOLEAN:
                 return Objects.equals(object, matchers.booleanValue());
             case NUMBER:
-                return Objects.equals(object, matchers.numberValue());
+                return Objects.equals(((Number)object).doubleValue(), matchers.numberValue().doubleValue());
             case STRING:
                 return Objects.equals(object, matchers.textValue());
             default: return false;

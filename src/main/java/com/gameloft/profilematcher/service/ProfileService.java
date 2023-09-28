@@ -31,7 +31,7 @@ public class ProfileService {
                 campaignRepository.findAll().stream()
                         .filter(Campaign::isEnabled)
                         .filter(campaign -> campaign.getStartDate().before(new Date()) && campaign.getEndDate().after(new Date()))
-                        //.filter(campaign -> campaign.getName().equals("mycampaign4"))
+                        //.filter(campaign -> campaign.getName().equals("mycampaign11"))
                         .filter(campaign -> matcherService.matches(profile, campaign.getMatchers()))
                         .map(Campaign::getName)
                         .forEach(profile.getActiveCampaigns()::add));
