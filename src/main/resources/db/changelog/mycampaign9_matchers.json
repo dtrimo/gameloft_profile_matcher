@@ -1,0 +1,15 @@
+{
+  "items|all_match": [
+      {
+        "quantity": {
+          "min": 2
+        }
+      },
+      {
+        "name": "item_1"
+      }
+    ]
+}
+
+
+

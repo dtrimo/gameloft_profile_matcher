@@ -103,6 +103,39 @@
             <column name="matchers" valueClobFile="mycampaign8_matchers.json"/>
         </insert>
 
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign9"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign9_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign10"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign10_matchers.json"/>
+        </insert>
+
+        <insert tableName="campaigns">
+            <column name="game_id" valueComputed="(select id from games where name='mygame')"/>
+            <column name="name" value="mycampaign11"/>
+            <column name="priority" valueDate="10.5"/>
+            <column name="start_date" valueDate="2022-01-25 00:00:00"/>
+            <column name="end_date" valueDate="2024-02-25 00:00:00"/>
+            <column name="enabled" valueBoolean="true"/>
+            <column name="last_updated" valueDate="2021-07-13 11:46:58"/>
+            <column name="matchers" valueClobFile="mycampaign11_matchers.json"/>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>
