@@ -91,10 +91,10 @@ public class MatcherService {
                             extendedFieldNames.add(fieldName);
                             Object fieldValue = extractFieldValue(fieldName, object);
                             if (!(fieldValue instanceof Collection)) {
-                                log.warn("Field {} is not a collection", String.join(",", fieldNames));
+                                log.warn("Field {} is not a collection", String.join(",", extendedFieldNames));
                                 return false;
                             }
-                            if (!collectionMatches(parts[1], ((Collection)fieldValue).stream(), fieldConditions, fieldNames)) {
+                            if (!collectionMatches(parts[1], ((Collection)fieldValue).stream(), fieldConditions, extendedFieldNames)) {
                                 return false;
                             }
                         }
